@@ -1,8 +1,8 @@
 import axios from "axios";
 // eslint-disable-next-line
 const cl = console.log;
-const address = 'https://notable-littleton.herokuapp.com'
-// const address = "http://localhost:4700";
+// const address = 'https://notable-littleton.herokuapp.com'
+const address = "http://localhost:4700";
 
 export const FETCHING = "FETCHING";
 export const SUCCESS = "SUCCESS";

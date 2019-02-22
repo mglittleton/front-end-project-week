@@ -1,54 +1,15 @@
-import React from "react";
-import { connect } from "react-redux";
-import styled from "styled-components";
+import React from 'react';
+import { connect } from 'react-redux';
+import { FormDiv } from '../css/styles';
 
-import { addNote, updateNote } from "../actions/index";
-
-const FormDiv = styled.div`
-  h3 {
-    font-size: 1.4rem;
-    padding: 70px 25px 35px;
-  }
-
-  form {
-    display: flex;
-    flex-direction: column;
-    margin-left: 25px;
-  }
-
-  input {
-    margin-bottom: 20px;
-  }
-
-  #title {
-    width: 60%;
-    height: 43px;
-    padding: 10px;
-    font-size: 1.2rem;
-  }
-
-  #textBody {
-    width: 80%;
-    height: 480px;
-    font-size: 1.2rem;
-    padding: 10px;
-  }
-
-  button {
-    width: 20%;
-    margin: 20px 0px;
-    font-size: 1.2rem;
-    background-color: darkcyan;
-    color: white;
-  }
-`;
+import { addNote, updateNote } from '../actions/index';
 
 class NoteForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: "",
-      textBody: ""
+      title: '',
+      textBody: ''
     };
   }
 
@@ -70,6 +31,7 @@ class NoteForm extends React.Component {
     if (this.props.updating) {
       this.props.updateNote({
         id: this.props.note.id,
+        user_id: this.props.activeUser,
         title: this.state.title,
         textBody: this.state.textBody
       });
@@ -77,10 +39,11 @@ class NoteForm extends React.Component {
       this.props.history.push(`/`);
     } else {
       this.props.addNote({
+        user_id: this.props.activeUser,
         title: this.state.title,
         textBody: this.state.textBody
       });
-      this.props.history.push("/");
+      this.props.history.push('/');
     }
   };
 
@@ -115,7 +78,8 @@ class NoteForm extends React.Component {
 const mapStateToProps = state => {
   return {
     note: state.singleNote,
-    updating: state.updating
+    updating: state.updating,
+    activeUser: state.activeUser
   };
 };
 

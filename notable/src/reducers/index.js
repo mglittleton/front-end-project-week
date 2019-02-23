@@ -6,7 +6,6 @@ import {
   UPDATE,
   FILTER,
   SIGNIN,
-  SIGNOUT,
   AUTH
 } from "../actions";
 
@@ -28,7 +27,8 @@ const initialState = {
   fetching: false,
   updating: false,
   error: "",
-  signedOut: true
+  signedOut: true,
+  activeUser: 0
 };
 
 export default (state = initialState, action) => {
@@ -58,9 +58,6 @@ export default (state = initialState, action) => {
     case SIGNIN:
       localStorage.setItem("jwt", action.payload.token);
       return Object.assign({}, state, { signedOut: false });
-    case SIGNOUT:
-      localStorage.removeItem('jwt');
-      return Object.assign({}, state, {signedOut: true});
     case AUTH:
       if (action.payload.user) {
         return Object.assign({}, state, { signedOut: false });

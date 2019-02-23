@@ -1,7 +1,7 @@
-import axios from "axios";
+import axios from 'axios';
 // eslint-disable-next-line
 const cl = console.log;
-const address = 'https://notable-littleton.herokuapp.com'
+const address = 'https://notable-littleton.herokuapp.com';
 // const address = "http://localhost:4700";
 
 export const FETCHING = "FETCHING";
@@ -11,7 +11,6 @@ export const ERROR = "ERROR";
 export const UPDATE = "UPDATE";
 export const FILTER = "FILTER";
 export const SIGNIN = "SIGNIN";
-export const SIGNOUT = "SIGNOUT";
 export const AUTH = "AUTH";
 
 export const addNote = data => {
@@ -135,10 +134,13 @@ export const filterNotes = list => {
   return { type: FILTER, payload: list };
 };
 
+<<<<<<< HEAD
 export const signout = () => {
-  return { type: SIGNOUT, payload: {}}
-}
+  return { type: SIGNOUT, payload: {} };
+};
 
+=======
+>>>>>>> parent of dc4c943... added signout feature and refactored styled components into a separate css file for cleanliness
 export const checkAuth = header => {
   return dispatch => {
     axios
@@ -154,3 +156,5 @@ export const checkAuth = header => {
       });
   };
 };
+
+cl('Hi');

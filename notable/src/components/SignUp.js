@@ -1,11 +1,55 @@
 import React from "react";
 import { connect } from "react-redux";
+import styled from "styled-components";
 
 import { register } from "../actions/index";
-import { SignupForm } from '../css/styles'
 
+const SignupForm = styled.div`
+   {
+    display: flex;
+    flex-direction: column;
+  }
 
-class SignUp extends React.Component {
+  h3 {
+    font-size: 1.4rem;
+    padding: 70px 25px 35px;
+    margin: auto;
+  }
+
+  .error-message {
+      color: red;
+      margin: auto;
+      font-size: 1.1rem;
+      padding-bottom: 5px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 35%;
+    margin: auto;
+  }
+
+  input {
+    margin-bottom: 20px;
+    width: 80%;
+    height: 43px;
+    padding: 10px;
+    font-size: 1.2rem;
+  }
+
+  button {
+    width: 90%;
+    margin: 20px 0px;
+    height: 35px
+    font-size: 1.2rem;
+    background-color: darkcyan;
+    color: white;
+  }
+`;
+
+class SignIn extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -76,4 +120,4 @@ const mapStateToProps = state => {
 export default connect(
   mapStateToProps,
   { register }
-)(SignUp);
+)(SignIn);

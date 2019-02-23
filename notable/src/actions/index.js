@@ -13,6 +13,7 @@ export const FILTER = "FILTER";
 export const SIGNIN = "SIGNIN";
 export const AUTH = "AUTH";
 
+
 export const addNote = data => {
   return dispatch => {
     axios
@@ -134,13 +135,10 @@ export const filterNotes = list => {
   return { type: FILTER, payload: list };
 };
 
-<<<<<<< HEAD
 export const signout = () => {
   return { type: SIGNOUT, payload: {} };
 };
 
-=======
->>>>>>> parent of dc4c943... added signout feature and refactored styled components into a separate css file for cleanliness
 export const checkAuth = header => {
   return dispatch => {
     axios

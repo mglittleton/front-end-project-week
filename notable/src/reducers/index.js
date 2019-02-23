@@ -28,7 +28,8 @@ const initialState = {
   fetching: false,
   updating: false,
   error: "",
-  signedOut: true
+  signedOut: true,
+  activeUser: 0
 };
 
 export default (state = initialState, action) => {

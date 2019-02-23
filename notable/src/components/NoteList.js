@@ -129,3 +129,4 @@ export default connect(
   mapStateToProps,
   { fetchNotes, fetchSingleNote, filterNotes }
 )(NoteList);
+

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const MainDiv = styled.div`
   display: flex;
@@ -85,5 +85,44 @@ export const SignupForm = styled.div`
     color: white;
     cursor: pointer;
     border-radius: 1rem;
+  }
+`;
+
+export const FormDiv = styled.div`
+  h3 {
+    font-size: 1.4rem;
+    padding: 70px 25px 35px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    margin-left: 25px;
+  }
+
+  input {
+    margin-bottom: 20px;
+  }
+
+  #title {
+    width: 60%;
+    height: 43px;
+    padding: 10px;
+    font-size: 1.2rem;
+  }
+
+  #textBody {
+    width: 80%;
+    height: 480px;
+    font-size: 1.2rem;
+    padding: 10px;
+  }
+
+  button {
+    width: 20%;
+    margin: 20px 0px;
+    font-size: 1.2rem;
+    background-color: darkcyan;
+    color: white;
   }
 `;

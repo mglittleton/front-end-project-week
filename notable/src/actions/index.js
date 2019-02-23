@@ -1,18 +1,18 @@
-import axios from "axios";
+import axios from 'axios';
 // eslint-disable-next-line
 const cl = console.log;
-const address = 'https://notable-littleton.herokuapp.com'
+const address = 'https://notable-littleton.herokuapp.com';
 // const address = "http://localhost:4700";
 
-export const FETCHING = "FETCHING";
-export const SUCCESS = "SUCCESS";
-export const SUCCESS_SINGLE = "SUCCESS_SINGLE";
-export const ERROR = "ERROR";
-export const UPDATE = "UPDATE";
-export const FILTER = "FILTER";
-export const SIGNIN = "SIGNIN";
-export const SIGNOUT = "SIGNOUT";
-export const AUTH = "AUTH";
+export const FETCHING = 'FETCHING';
+export const SUCCESS = 'SUCCESS';
+export const SUCCESS_SINGLE = 'SUCCESS_SINGLE';
+export const ERROR = 'ERROR';
+export const UPDATE = 'UPDATE';
+export const FILTER = 'FILTER';
+export const SIGNIN = 'SIGNIN';
+export const SIGNOUT = 'SIGNOUT';
+export const AUTH = 'AUTH';
 
 export const addNote = data => {
   return dispatch => {
@@ -136,8 +136,8 @@ export const filterNotes = list => {
 };
 
 export const signout = () => {
-  return { type: SIGNOUT, payload: {}}
-}
+  return { type: SIGNOUT, payload: {} };
+};
 
 export const checkAuth = header => {
   return dispatch => {
@@ -154,3 +154,5 @@ export const checkAuth = header => {
       });
   };
 };
+
+cl('Hi');
